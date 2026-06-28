@@ -1,15 +1,23 @@
+from Account import Bank
 class BankSystem:
+
     def __init__(self):
-        self.account = []
+        self.accounts = []
 
     def create_account(self):
-        int(input("Enter account no :"))
-        input("Enter account holder name :")
-        int(input("Enter balance :"))
-        print("account created successfully")
+        account_no = int(input("Enter account no :"))
+        holder_name = input("Enter account holder name :")
+        balance = int(input("Enter balance :"))
+
+        bank=Bank(account_no,holder_name,balance)
         
+        self.accounts.append(bank)
+        print("Account Created successfully!")
+    
     def display_account(self):
-        print("display account detail")
+        print("\nList of Account:")
+        for ac in self.accounts:
+            ac.display()
 
     def deposite_money(self):
         print("deposit money")
@@ -21,7 +29,14 @@ class BankSystem:
         print("search account")
 
     def delete_account(self):
-        print("delete account")
+        account_no = int(input("Enter account_no :"))
+        for bank in self.accounts:
+            if bank.account_no == account_no:
+                self.accounts.remove(bank)
+                print("account remove successfully")
+                return
+        print("account not found.")
+        
                         
 
 

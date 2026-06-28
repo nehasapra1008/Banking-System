@@ -18,16 +18,16 @@ while True:
     bank.create_account()
 
  elif choice == "2":
-    bank.create_account()
+    bank.display_account()
   
  elif choice == "3":
-    bank.create_account()
+    bank.deposite_money()
 
  elif choice == "4":
    bank.withdrow_money()
 
  elif choice == "5":
-   bank.withdrow_money()
+   bank.search_account()
 
  elif choice == "6":
    bank.delete_account()
