@@ -1,3 +1,6 @@
+from BankingManagementSystem import BankSystem
+bank = BankSystem()
+
 while True:
 
  print("\n=====Banking System====")
@@ -12,22 +15,22 @@ while True:
  choice = input("Enter your choice :")
 
  if choice == "1":
-    print("create acconnt")
+    bank.create_account()
 
  elif choice == "2":
-    print("display account detail")
+    bank.create_account()
   
  elif choice == "3":
-   print("deposit money")
+    bank.create_account()
 
  elif choice == "4":
-   print("withdrow money")
+   bank.withdrow_money()
 
  elif choice == "5":
-   print("search account") 
+   bank.withdrow_money()
 
  elif choice == "6":
-   print("delete account")
+   bank.delete_account()
 
  elif choice == "7":
    print("exit") 
