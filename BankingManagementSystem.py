@@ -1,4 +1,4 @@
-from Account import Bank
+from Bank import Account
 class BankSystem:
 
     def __init__(self):
@@ -9,7 +9,7 @@ class BankSystem:
         holder_name = input("Enter account holder name :")
         balance = int(input("Enter balance :"))
 
-        bank=Bank(account_no,holder_name,balance)
+        bank=Account(account_no,holder_name,balance)
         
         self.accounts.append(bank)
         print("Account Created successfully!")
@@ -20,8 +20,14 @@ class BankSystem:
             ac.display()
 
     def deposite_money(self):
-        print("deposit money")
-
+       ac_no=int(input("Please Enter Your Account No : "))
+       for a in self.accounts:
+           print(f"{a.account_no}")
+           if(a.account_no ==ac_no):
+               deposit_amount=int(input("Please Enter Your Deposit Amount : "))
+               a.balance=a.balance + deposit_amount
+               print("Deposit Successfully")
+                  
     def withdrow_money(self):
         print("withdrow money")
 
@@ -31,7 +37,7 @@ class BankSystem:
     def delete_account(self):
         account_no = int(input("Enter account_no :"))
         for bank in self.accounts:
-            if bank.account_no == account_no:
+            if Account.account_no == account_no:
                 self.accounts.remove(bank)
                 print("account remove successfully")
                 return
